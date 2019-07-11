@@ -6,6 +6,8 @@ class IssueTodoList < ActiveRecord::Base
   has_many :issue_todo_list_items, -> { order('position ASC') }, dependent: :destroy
   has_many :issues, through: :issue_todo_list_items
 
+  belongs_to :issue_query
+
   validates :title, presence: true
   before_save :force_updated
 

@@ -1,4 +1,4 @@
-class CreateTodoLists < ActiveRecord::Migration[4.2]
+class CreateTodoLists < ActiveRecord::Migration
   def up
     create_table :issue_todo_lists do |t|
       t.string :project_identifier

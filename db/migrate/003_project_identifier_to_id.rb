@@ -1,4 +1,4 @@
-class ProjectIdentifierToId < ActiveRecord::Migration[4.2]
+class ProjectIdentifierToId < ActiveRecord::Migration
   def up
     add_column :issue_todo_lists, :project_id, :integer, null: true, after: :id
 

@@ -34,7 +34,7 @@ class IssueTodoListsController < ApplicationController
 
   def show
     @todo_list_items = @todo_list.issue_todo_list_items
-    @issue_query = IssueQuery.new
+    @issue_query = @todo_list.issue_query || IssueQuery.new()
   end
 
   def edit
