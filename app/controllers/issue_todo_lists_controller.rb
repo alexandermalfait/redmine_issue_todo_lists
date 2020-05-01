@@ -34,6 +34,11 @@ class IssueTodoListsController < ApplicationController
 
   def show
     @todo_list_items = @todo_list.issue_todo_list_items
+
+    if params[:only_mine]
+      @todo_list_items = @todo_list_items.joins(:issue).where(issues: {assigned_to_id: User.current})
+    end
+
     @issue_query = @todo_list.issue_query || IssueQuery.new()
   end
 

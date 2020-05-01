@@ -56,5 +56,9 @@
             helper: fixWidth,
             update: updateOrder
         });
+
+        $('#only_mine').on('change', function() {
+            $(this).closest('form').submit()
+        })
     });
 })(jQuery);
