@@ -128,7 +128,7 @@ class IssueTodoListsController < ApplicationController
 
   def issue_todo_list_params
     if Gem::Version.new(Rails::VERSION::STRING) >= Gem::Version.new('4.0.0')
-      params.require(:issue_todo_list).permit(:title, :description, :remove_closed_issues)
+      params.require(:issue_todo_list).permit(:title, :description, :remove_closed_issues, :issue_query_id)
     else
       params[:issue_todo_list]
     end
