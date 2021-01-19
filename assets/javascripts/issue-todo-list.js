@@ -30,7 +30,7 @@
 
         $.ajax({
             type: 'POST',
-            url: window.location.href + '/update_item_order',
+            url: $('#issue-todo-list-table').data('update-order-url'),
             data: itemOrder,
             dataType: 'html',
             beforeSend: function(xhr) {
